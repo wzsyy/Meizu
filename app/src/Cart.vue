@@ -32,6 +32,10 @@
                 </div>
             </div>
         </div>
+        <!-- main -->
+        <div class="main">
+
+        </div>
     </div>
 </template>
 <script>
@@ -47,8 +51,8 @@ export default {
            this.$refs.info.style.color="#00b4ff";
            this.$refs.arrow.style.transform="rotate(-180deg)";
            this.$refs.arrow.style.transition="transform 300ms ease-in-out";
-           this.$refs.hidden.style.height="120px";
-           this.$refs.hidden.style.transition="height 1000ms ease-in-out";
+           this.$refs.hidden.style.height="130px";
+           this.$refs.hidden.style.transition="height 300ms ease-in-out";
         },
         hidden(){
             this.show2=false;
@@ -56,12 +60,11 @@ export default {
             this.$refs.arrow.style.transform="rotate(0deg)";
             this.$refs.arrow.style.transition="transform 300ms ease-in-out";
             this.$refs.hidden.style.height="0px";
-        }
+        },
     }
 }
 </script>
 <style lang="scss" scoped>
-@import url('../assets/scss/reset.scss');
     #cart{
         .nav-box{
             border-bottom: 1px solid #efefef;
@@ -118,13 +121,16 @@ export default {
                     border: 1px solid #ccc;
                     width: 50%;
                     line-height: 2.5;
-                    padding: 40px 26px 40px 20px;
+                    padding: 40px 0px 20px;
                     z-index: 1;
                     margin-top: -14px;
                     margin-right: -10px;
                     cursor: pointer;
-                    height: 120px;
+                    width: 150px;
                     overflow: hidden;
+                    ul{
+                        padding-left: 15px;
+                    }
                     p{
                         border-top: 1px solid #ccc;
                         text-align: center;

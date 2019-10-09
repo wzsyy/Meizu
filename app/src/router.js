@@ -4,7 +4,6 @@ import footer from "./components/common/footer"
 import header from "./components/common/TongChen/header.vue"
 import Cart from "./Cart"
 
-
 Vue.use(Router)
 
 export default new Router({
@@ -12,5 +11,6 @@ export default new Router({
     {path:"/footer",component:footer},
     {path:"/header",component:header},
     {path:"/Cart",component:Cart},
+    {path:"/header",component:header}
   ]
 })
