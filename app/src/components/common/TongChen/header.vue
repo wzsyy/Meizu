@@ -10,8 +10,8 @@
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
-            width="402.048px"
-            height="73.556px"
+            width="125px"
+            height="24px"
             viewBox="17.318 5.824 402.048 73.556"
             enable-background="new 17.318 5.824 402.048 73.556"
           >
@@ -31,19 +31,152 @@
           </svg>
         </router-link>
       </div>
-      <div class="header-link">
-       <div>手机</div>
+      <div class="header-search">
+        <input type="text" placeholder="魅族 16s Pro">
+        <router-link to>
+          <img src="http://127.0.0.1:8080/header/search.png">
+        </router-link>
       </div>
+      <div class="header-link">
+        <router-link to class="phone-link">手机</router-link>
+        <router-link to class="hear-link">声学</router-link>
+        <router-link to class="parts-link">配件</router-link>
+        <router-link to class="life-link">生活</router-link>
+        <router-link to class>Flyme</router-link>
+        <router-link to class>服务</router-link>
+        <router-link to class>专卖店</router-link>
+        <router-link to class>社区</router-link>
+        <router-link to class="app-link">APP下载</router-link>
+      </div>
+
+      <commodity :data="data1" class="commodity"></commodity>
     </div>
   </div>
 </template>
 <script>
+import commodity from "./commodity.vue";
 export default {
   data() {
     return {
+      data1: [
+        {
+          pid: 1,
+          pic: "ca207b74-06a4-491f-a620-58a6ed0c23cd.jpg",
+          pname: "魅族 16s Pro",
+          price: "￥2699"
+        },
+        {
+          pid: 2,
+          pic: "Cgbj0FzvRI6AWu1jAAxIbnS8M5Q295.png@240x240.jpg",
+          pname: "魅族 16Xs",
+          price: "￥1499"
+        },
+        {
+          pid: 3,
+          pic: "Cgbj0Fy9c0KAXyeaAAa7nrDVZiw073.png@240x240.jpg",
+          pname: "魅族 16s",
+          price: "￥2699"
+        },
+        {
+          pid: 4,
+          pic: "Cgbj0Vx_ZK6AaEObAAa1DJqn7us376.png@240x240.jpg",
+          pname: "魅族 Note9",
+          price: "￥1199"
+        },
+        {
+          pid: 5,
+          pic: "Cgbj0FtqgnmAFgJPAAhgnScaoFg724.png@240x240.jpg",
+          pname: "魅族 16th",
+          price: "￥2298"
+        },
+        {
+          pid: 6,
+          pic: "Cgbj0FvINLWACd0AAAh2dGv5_R0516.png@240x240.jpg",
+          pname: "魅族 16 X",
+          price: "￥1598"
+        },
+        {
+          pid: 7,
+          pic: "Cgbj0FusSK2AQZgiAAlFKHoO-co889.png@240x240.jpg",
+          pname: "魅族 X8",
+          price: "￥1298"
+        },
+        {
+          pid: 8,
+          pic: "Cgbj0VvQPnuAAwPPAAMv8zzt2DE910.png@240x240.jpg",
+          pname: "魅族 Note8",
+          price: "￥999"
+        }
+      ]
     };
   },
-  methods: {
+  methods: {},
+  components: {
+    commodity: commodity
   }
 };
 </script>
+<style lang="scss" scoped>
+.header-wrap-1240 {
+  width: 1240px;
+  height: 82px;
+  margin: 0 auto;
+  position: relative;
+  .header-logo {
+    float: left;
+    padding: 28px 0;
+  }
+}
+.header-link {
+  overflow: hidden;
+  float: right;
+  a {
+    padding: 31px 20px 30px;
+    line-height: 21px;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: #00c3f5;
+    }
+  }
+}
+.header-search {
+  position: relative;
+  float: right;
+  margin: 26px 5px 0 10px;
+  width: 170px;
+  height: 30px;
+  line-height: 29px;
+  font-size: 12px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  input {
+    display: block;
+    position: relative;
+    border: none;
+    padding: 0;
+    outline: 0;
+    width: 127px;
+    height: 20px;
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #333;
+  }
+  img {
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.commodity {
+  position: absolute;
+  top: 250px;
+}
+</style>
