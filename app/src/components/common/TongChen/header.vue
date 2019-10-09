@@ -31,6 +31,20 @@
           </svg>
         </router-link>
       </div>
+      <i class="el-icon-goods" style="margin-left:-5px;">
+        <em>0</em>
+      </i>
+      <el-dropdown size="mini">
+        <span class="el-dropdown-link" size="mini">
+          <i class="el-icon-user" size="mini" style="margin-right:30px;"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>立即登陆</el-dropdown-item>
+          <el-dropdown-item>立即注册</el-dropdown-item>
+          <el-dropdown-item>我的订单</el-dropdown-item>
+          <el-dropdown-item>M码通道</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
       <div class="header-search">
         <input type="text" placeholder="魅族 16s Pro">
         <router-link to>
@@ -38,19 +52,38 @@
         </router-link>
       </div>
       <div class="header-link">
-        <router-link to class="phone-link">手机</router-link>
-        <router-link to class="hear-link">声学</router-link>
-        <router-link to class="parts-link">配件</router-link>
-        <router-link to class="life-link">生活</router-link>
-        <router-link to class>Flyme</router-link>
-        <router-link to class>服务</router-link>
-        <router-link to class>专卖店</router-link>
-        <router-link to class>社区</router-link>
-        <router-link to class="app-link">APP下载</router-link>
+        <ul>
+          <li class="phone-link">
+            <router-link to>手机</router-link>
+          </li>
+          <li>
+            <router-link to class="hear-link">声学</router-link>
+          </li>
+          <li>
+            <router-link to class="parts-link">配件</router-link>
+          </li>
+          <li>
+            <router-link to class="life-link">生活</router-link>
+          </li>
+          <li>
+            <router-link to class>Flyme</router-link>
+          </li>
+          <li>
+            <router-link to class>服务</router-link>
+          </li>
+          <li>
+            <router-link to class>专卖店</router-link>
+          </li>
+          <li>
+            <router-link to class>社区</router-link>
+          </li>
+          <li>
+            <router-link to class="app-link">APP下载</router-link>
+          </li>
+        </ul>
       </div>
-
-      <commodity :data="data1" class="commodity"></commodity>
     </div>
+    <commodity :data="data1" class="commodity"></commodity>
   </div>
 </template>
 <script>
@@ -117,6 +150,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import url("../../../../assets/scss/reset.scss");
 .header-wrap-1240 {
   width: 1240px;
   height: 82px;
@@ -130,15 +164,15 @@ export default {
 .header-link {
   overflow: hidden;
   float: right;
-  a {
+  li {
+    float: left;
     padding: 31px 20px 30px;
+  }
+  a {
     line-height: 21px;
     font-size: 14px;
     text-decoration: none;
     color: black;
-    &:hover {
-      color: #00c3f5;
-    }
   }
 }
 .header-search {
@@ -175,8 +209,72 @@ export default {
     transform: translateY(-50%);
   }
 }
+i {
+  display: block;
+  float: right;
+  margin: 32px 5px 0 16px;
+  transform: scale(1.8);
+  em {
+    position: absolute;
+    top: -2px;
+    right: -6px;
+    height: 15px;
+    border-radius: 50%;
+    background: #c00;
+    color: #fff;
+    line-height: 15px;
+    text-align: center;
+    display: inline-block;
+    padding: 0 4px;
+    text-indent: 0;
+    transform: scale(0.5);
+  }
+}
+
+.el-dropdown {
+  float: right;
+  .el-dropdown-link {
+    cursor: pointer;
+  }
+  .demonstration {
+    display: block;
+    color: #8492a6;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+
 .commodity {
+  display: none;
+  width: 100%;
+  height: 0;
   position: absolute;
-  top: 250px;
+  padding-top: 25px;
+  top: 40px;
+  left: 0px;
+  &:hover {
+    display: block;
+  }
+}
+@keyframes xx {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 200%;
+  }
+}
+.phone-link {
+  &:hover {
+    cursor: pointer;
+    a {
+      color: #00c3f5;
+    }
+    .commodity {
+      overflow: hidden;
+      display: block;
+      animation: xx 0.5s linear 0s forwards;
+    }
+  }
 }
 </style>

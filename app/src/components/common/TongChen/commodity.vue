@@ -9,8 +9,8 @@
         :price="data.price"
       >
         <img :src="`http://127.0.0.1:8080/header/`+item.pic">
-        <span>{{item.pname}}</span>
-        <span>{{item.price}}</span>
+        <p>{{item.pname}}</p>
+        <p>{{item.price}}</p>
       </li>
     </ul>
   </div>
@@ -23,13 +23,28 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import url("../../../../assets/scss/reset.scss");
 ul {
-  list-style: none;
   display: flex;
-	justify-content: center;
-	align-items: center;
-	padding:0;
-
+  width: 1240px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  li{
+    text-align: center;
+    font-size: 12px;
+    width: 142px;
+    color: #333;
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
+  }
 }
 img {
   width: 100px;
